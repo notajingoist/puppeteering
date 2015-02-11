@@ -1,0 +1,31 @@
+{
+  "name": "puppeteering",
+  "version": "0.0.0",
+  "description": "the illustrated arm",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/notajingoist/puppeteering.git"
+  },
+  "author": "Jing Xiao & Vanessa Branch",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/notajingoist/puppeteering/issues"
+  },
+  "homepage": "https://github.com/notajingoist/puppeteering",
+  "dependencies": {
+    "express": "^4.11.2",
+    "jade": "^1.9.2"
+  },
+  "devDependencies": {
+    "browserify": "^8.1.3",
+    "gulp": "^3.8.11",
+    "gulp-ruby-sass": "^1.0.0-alpha.3",
+    "nodemon": "^1.3.6",
+    "vinyl-source-stream": "^1.0.0",
+    "watchify": "^2.3.0"
+  }
+}
