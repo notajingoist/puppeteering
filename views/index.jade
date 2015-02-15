@@ -1,4 +1,8 @@
 extend layout
 block content
-    div.
-        hello world
+    div(class='video-player')
+        video(id='bg-video', autoplay, preload)
+            source(src='/video/test-short.webm', type='video/webm')
+            source(src='/video/test-short.mp4', type='video/mp4')
+        div(id='btn-clip1', class='btn-clip hide')
+
