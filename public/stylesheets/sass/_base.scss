@@ -8,8 +8,8 @@ html {
 }
 
 body {
-    @include transition(background-color 0.2s ease-in-out 0);
-    // margin: 0 auto;
+    // @include transition(background-color 0.2s ease-in-out 0);
+    margin: 0 auto;
     // width: 100%;
     // position: relative;
     height: 100%;
@@ -17,6 +17,9 @@ body {
     color: #000;
     line-height: 1.2;
     letter-spacing: 1px;
+
+    background: #751a1a url('../../images/test-red.png') center center no-repeat; //#5a4a3d
+    background-size: cover;
 }
 
 a {

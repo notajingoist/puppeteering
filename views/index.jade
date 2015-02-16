@@ -1,4 +1,18 @@
 extend layout
 block content
-    div.
-        hello world
+    div(class='video-player', class='hide')
+        video(id='bg-video', preload, muted)
+            source(src='/video/test-short.webm', type='video/webm')
+            source(src='/video/test-short.mp4', type='video/mp4')
+        video(id='video-clip1', preload, muted, class='hide')
+            source(src='/video/test-short.webm', type='video/webm')
+            source(src='/video/test-short.mp4', type='video/mp4')
+        video(id='video-clip2', preload, muted, class='hide')
+            source(src='/video/test-short.webm', type='video/webm')
+            source(src='/video/test-short.mp4', type='video/mp4')
+        video(id='video-clip3', preload, muted, class='hide')
+            source(src='/video/test-short.webm', type='video/webm')
+            source(src='/video/test-short.mp4', type='video/mp4')
+        div(id='btn-clip1', class='btn-clip hover-off hide', data-id='1')
+        div(id='btn-clip2', class='btn-clip hover-off hide', data-id='2')
+        div(id='btn-clip3', class='btn-clip hover-off hide', data-id='3')

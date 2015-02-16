@@ -1,12 +1,85 @@
-.container {
-    // @extend %center-element-horiz;
-    // @include transition(opacity 0.2s ease-in-out 0);
-    // @include transform(scaleX(-1));
-    // background: url('../../images/screens/welcome.png') center 25px no-repeat;
-    // background-size: 475px auto;
+// .container {
+//     // @extend %center-element-horiz;
+//     // @include transition(opacity 0.2s ease-in-out 0);
+//     // @include transform(scaleX(-1));
+//     // background: url('../../images/screens/welcome.png') center 25px no-repeat;
+//     // background-size: 475px auto;
+//     width: 100%;
+//     height: 100%;
+//     padding: 0;
+//     margin: 0 auto;
+//     // overflow: hidden;
+// }
+
+.video-player {
+    position: absolute;
+    // z-index: -100;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    padding: 0;
-    margin: 0 auto;
-    // overflow: hidden;
+    overflow: hidden;
+
+    // background: #000 url('../../images/test-short-still.png') no-repeat;
+    // background-size: cover;
+
+    video {
+        @extend %center-element-horiz;
+        width: 100%;
+        height: auto;
+
+        //javascript to make height 100% when screen height is greater than width?
+    }
 }
+
+.stillframe-bg {
+    background: #000 url('../../images/test-short-still.png') no-repeat;
+    background-size: cover;
+}
+
+.btn-clip {
+    @include transition(all 0.2s ease-in-out 0);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 200px;
+    height: 200px;
+    // opacity: 0.3;
+    // border-radius: 100%;
+    &:hover {
+        cursor: pointer;
+    }
+    z-index: 100;
+}
+
+.hover-off {
+    // background-color: blue;
+    background: url('../../images/tattoo2-2.png') center center no-repeat;
+    background-size: contain;
+}
+
+.hover-on {
+    // background-color: red;
+    background: url('../../images/tattoo2-1.png') center center no-repeat;
+    background-size: contain;
+}
+
+#btn-clip1 {
+    left: 10%;
+    top: 60%;
+}
+
+#btn-clip2 {
+    left: 40%;
+    top: 10%;
+}
+
+#btn-clip3 {
+    left: 75%;
+    top: 40%;
+}
+
+
+// audio, canvas, video {
+//     display: inline-block;
+// }
