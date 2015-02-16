@@ -3,7 +3,6 @@ var SITE = {
         this.setVars();
         this.bindEvents();
         this.playBgVideo();
-
         this.$window.trigger('resize');
     },
 
@@ -26,7 +25,7 @@ var SITE = {
         this.$video.on('ended', function(e) {
             var $video = $(e.currentTarget);
             var videoId = $video.attr('id');
-            $video.addClass('hide');
+            $video.fadeOut();
             this.$button.removeClass('hide');
             if (videoId === 'bg-video') {
                 this.$videoPlayer.addClass('stillframe-bg');
@@ -37,7 +36,7 @@ var SITE = {
         this.$video.on('play', function(e) {
             var $video = $(e.currentTarget);
             var videoId = $video.attr('id');
-            $video.removeClass('hide');
+            $video.fadeIn();
             this.$button.addClass('hide');
             console.log('playing ' + videoId);
         }.bind(this));
@@ -68,8 +67,6 @@ var SITE = {
 
     playBgVideo: function() {
         setTimeout(function() {
-            // this.$videoPlayer.fadeIn();
-            console.log(this.$bgVideo);
             this.$bgVideo[0].play();
             this.$videoPlayer.removeClass('intro-bg');
         }.bind(this), 2000);
@@ -77,8 +74,6 @@ var SITE = {
 
     resizeToCover: function(e) {
         console.log('resizing');
-        console.log(this.minimumVideoWidth);
-        console.log(this.originalVideoWidth);
         var newWidth = this.$window.width();
         var newHeight = this.$window.height();
 
