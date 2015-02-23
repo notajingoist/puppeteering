@@ -10,7 +10,6 @@
 //     margin: 0 auto;
 //     // overflow: hidden;
 // }
-
 .video-player {
     position: absolute;
     z-index: -100;
@@ -26,15 +25,15 @@
 
     video {
         // @extend %center-element-horiz;
-        // width: 1920;
-        // height: 1080;
+        width: 1920;
+        height: 1080;
 
         //javascript to make height 100% when screen height is greater than width?
     }
 }
 
 .intro-bg {
-    background: #751a1a url('../../images/test-red.png') center center no-repeat; //#5a4a3d
+    background: #751a1a url('../../images/title.png') center center no-repeat; //#5a4a3d
     background-size: cover;
 }
 
@@ -58,31 +57,93 @@
     z-index: 100;
 }
 
+@include keyframes(clip-hover) {
+    0% {
+
+        // background: url('../../images/tattoo2-2.png') center center no-repeat;
+        // background-size: contain;
+    }
+    33% {
+        @include transform(rotate(30deg));
+        // background: url('../../images/tattoo2-1.png') center center no-repeat;
+        // background-size: contain;
+    }
+    66% {
+        @include transform(rotate(40deg));
+        // background: url('../../images/tattoo2-2.png') center center no-repeat;
+        // background-size: contain;
+    }
+    100% {
+        @include transform(rotate(50deg));
+        // background: url('../../images/tattoo2-1.png') center center no-repeat;
+        // background-size: contain;
+    }
+}
+
 .hover-off {
     // background-color: blue;
-    background: url('../../images/tattoo2-2.png') center center no-repeat;
-    background-size: contain;
+    // background: url('../../images/tattoo2-2.png') center center no-repeat;
+    // background-size: contain;
 }
 
 .hover-on {
+    @include transform(rotate(10deg));
+    // @include animation('clip-hover .5s infinite')
     // background-color: red;
-    background: url('../../images/tattoo2-1.png') center center no-repeat;
-    background-size: contain;
+    // background: url('../../images/tattoo2-1.png') center center no-repeat;
+    // background-size: contain;
 }
 
 #btn-clip1 {
-    left: 10%;
-    top: 60%;
+    left: 9.5%;
+    top: 63%;
+
+    width: 28%;
+    height: 20%;
+
+    // width: 471px;//325px;
+    // height: 276px;//170px;
+
+    background: url('../../images/mermaid.png') center center no-repeat;
+    background-size: contain;
+
+    // &.hover-on {
+    //     // @include transition(all 0.2s ease-in-out 0);
+    //     @include transform(rotate(10deg));
+    // }
+
+    // &.hover-off {
+    //     // background: url('../../images/mermaid.png') center center no-repeat;
+    //     // background-size: contain;
+    // }
 }
 
 #btn-clip2 {
-    left: 40%;
-    top: 10%;
+    left: 35%;
+    top: 65%;
+
+    width: 25%;
+    height: 20%;
+
+    // width: 322px;//197px;
+    // height: 278px;//170px;
+
+    background: url('../../images/flower.png') center center no-repeat;
+    background-size: contain;
 }
 
 #btn-clip3 {
-    left: 75%;
-    top: 40%;
+    left: 53%;
+    top: 65%;
+
+    width: 20%;
+    height: 20%;
+
+    // width: 77px;
+    // height: 277px;
+
+    background: url('../../images/script.png') center center no-repeat;
+    background-size: contain;
 }
 
 
