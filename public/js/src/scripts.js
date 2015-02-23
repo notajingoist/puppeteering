@@ -10,6 +10,7 @@ var SITE = {
         this.$window = $(window);
         this.$video = $('video');
         this.$bgVideo = $('#bg-video');
+        this.$loopedVideo = $('#looped-video');
         this.$videoPlayer = $('.video-player');
         this.$button = $('.btn-clip');
 
@@ -25,20 +26,41 @@ var SITE = {
         this.$video.on('ended', function(e) {
             var $video = $(e.currentTarget);
             var videoId = $video.attr('id');
-            $video.fadeOut();
-            this.$button.removeClass('hide');
-            if (videoId === 'bg-video') {
-                this.$videoPlayer.addClass('stillframe-bg');
+
+            if (videoId !== 'looped-video') {
+                if (videoId !== 'bg-video') {
+                    $video.fadeOut();
+                    console.log('fading out');
+                } else {
+                    $video.fadeOut(0);
+                    // $video.addClass('hide');
+                    console.log(videoId);
+                }
+                this.$button.removeClass('hide');
+
+                this.$loopedVideo.fadeIn(0);
+                this.$loopedVideo[0].play();
+
+                if (videoId === 'bg-video') {
+                    // this.$videoPlayer.addClass('stillframe-bg');
+                }
+                console.log(videoId + ' ended');
             }
-            console.log(videoId + ' ended');
         }.bind(this));
 
         this.$video.on('play', function(e) {
             var $video = $(e.currentTarget);
             var videoId = $video.attr('id');
-            $video.fadeIn();
-            this.$button.addClass('hide');
-            console.log('playing ' + videoId);
+
+            if (videoId !== 'looped-video') {
+                $video.fadeIn();
+                this.$button.addClass('hide');
+
+                this.$loopedVideo.fadeOut();
+                this.$loopedVideo[0].pause();
+
+                console.log('playing ' + videoId);
+            }
         }.bind(this));
 
         // clip buttons
